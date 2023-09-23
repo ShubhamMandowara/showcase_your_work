@@ -28,36 +28,6 @@ Showcase your work using streamlit and Gradio
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ## Pyvis
 #### What is Pyvis and where to use
 Use case: to finds links betweek the connections on social media to find out crime suspect, finding out relationship, to visualize algorithms and find out shortest path etc
@@ -67,6 +37,22 @@ Use case: to finds links betweek the connections on social media to find out cri
 4. Create multiple nodes
 5. Networkx and create a cyclic graph with physics and without physics
 6. Add menu
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 ## Bokeh

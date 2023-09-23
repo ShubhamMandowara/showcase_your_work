@@ -35,9 +35,9 @@
         <style type="text/css">
 
              #mynetwork {
-                 width: 100%;
-                 height: 600px;
-                 background-color: #ffffff;
+                 width: 50%;
+                 height: 50%;
+                 background-color: black;
                  border: 1px solid lightgray;
                  position: relative;
                  float: left;
@@ -71,11 +71,11 @@
                                 
                                     <option value="1">1</option>
                                 
+                                    <option value="4">4</option>
+                                
                                     <option value="2">2</option>
                                 
                                     <option value="3">3</option>
-                                
-                                    <option value="4">4</option>
                                 
                             </select>
                         </div>
@@ -129,8 +129,8 @@
                   
 
                   // parsing and collecting nodes and edges from the python
-                  nodes = new vis.DataSet([{"color": "#97c2fc", "id": 0, "label": 0, "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": 1, "label": 1, "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": 2, "label": 2, "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": 3, "label": 3, "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": 4, "label": 4, "shape": "dot", "size": 10}]);
-                  edges = new vis.DataSet([{"from": 0, "to": 1, "width": 1}, {"from": 0, "to": 2, "width": 1}, {"from": 0, "to": 3, "width": 1}, {"from": 0, "to": 4, "width": 1}, {"from": 1, "to": 2, "width": 1}, {"from": 1, "to": 3, "width": 1}, {"from": 1, "to": 4, "width": 1}, {"from": 2, "to": 3, "width": 1}, {"from": 2, "to": 4, "width": 1}, {"from": 3, "to": 4, "width": 1}]);
+                  nodes = new vis.DataSet([{"color": "#97c2fc", "id": 0, "label": 0, "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": 1, "label": 1, "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": 4, "label": 4, "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": 2, "label": 2, "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": 3, "label": 3, "shape": "dot", "size": 10}]);
+                  edges = new vis.DataSet([{"from": 0, "to": 1, "width": 1}, {"from": 0, "to": 4, "width": 1}, {"from": 1, "to": 2, "width": 1}, {"from": 2, "to": 3, "width": 1}, {"from": 3, "to": 4, "width": 1}]);
 
                   nodeColors = {};
                   allNodes = nodes.get({ returnType: "Object" });

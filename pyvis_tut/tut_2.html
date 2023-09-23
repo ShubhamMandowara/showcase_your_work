@@ -6,9 +6,6 @@
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/dist/vis-network.min.css" integrity="sha512-WgxfT5LWjfszlPHXRmBWHkV2eceiWTOBvrKCNbdgDYTHrT2AeLCGbF4sZlZw3UMN3WtL0tGUoIAKsu8mllg/XA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
             <script src="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/vis-network.min.js" integrity="sha512-LnvoEWDFrqGHlHmDD2101OrLcbsfkrzoSpvtSQtxK3RMnRV0eOkhhBN2dXHKRrUU8p2DGRTk35n4O8nWSVe1mQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
             
-                <link href="lib/tom-select/tom-select.css" rel="stylesheet">
-                <script src="lib/tom-select/tom-select.complete.min.js"></script>
-            
         
 <center>
 <h1></h1>
@@ -36,8 +33,8 @@
 
              #mynetwork {
                  width: 100%;
-                 height: 100%;
-                 background-color: #222222;
+                 height: 600px;
+                 background-color: #ffffff;
                  border: 1px solid lightgray;
                  position: relative;
                  float: left;
@@ -54,36 +51,6 @@
 
     <body>
         <div class="card" style="width: 100%">
-            
-                <div id="select-menu" class="card-header">
-                    <div class="row no-gutters">
-                        <div class="col-10 pb-2">
-                            <select
-                            class="form-select"
-                            aria-label="Default select example"
-                            onchange="selectNode([value]);"
-                            id="select-node"
-                            placeholder="Select node..."
-                            >
-                                <option selected>Select a Node by ID</option>
-                                
-                                    <option value="0">0</option>
-                                
-                                    <option value="1">1</option>
-                                
-                                    <option value="4">4</option>
-                                
-                                    <option value="2">2</option>
-                                
-                                    <option value="3">3</option>
-                                
-                            </select>
-                        </div>
-                        <div class="col-2 pb-2">
-                            <button type="button" class="btn btn-primary btn-block" onclick="neighbourhoodHighlight({nodes: []});">Reset Selection</button>
-                        </div>
-                    </div>
-                </div>
             
             
             <div id="mynetwork" class="card-body"></div>
@@ -111,14 +78,6 @@
               };
 
               
-                  new TomSelect("#select-node",{
-                      create: false,
-                      sortField: {
-                          field: "text",
-                          direction: "asc"
-                      }
-                  });
-              
 
               
 
@@ -129,8 +88,8 @@
                   
 
                   // parsing and collecting nodes and edges from the python
-                  nodes = new vis.DataSet([{"color": "#97c2fc", "font": {"color": "while"}, "id": 0, "label": 0, "shape": "dot", "size": 10}, {"color": "#97c2fc", "font": {"color": "while"}, "id": 1, "label": 1, "shape": "dot", "size": 10}, {"color": "#97c2fc", "font": {"color": "while"}, "id": 4, "label": 4, "shape": "dot", "size": 10}, {"color": "#97c2fc", "font": {"color": "while"}, "id": 2, "label": 2, "shape": "dot", "size": 10}, {"color": "#97c2fc", "font": {"color": "while"}, "id": 3, "label": 3, "shape": "dot", "size": 10}]);
-                  edges = new vis.DataSet([{"from": 0, "to": 1, "width": 1}, {"from": 0, "to": 4, "width": 1}, {"from": 1, "to": 2, "width": 1}, {"from": 2, "to": 3, "width": 1}, {"from": 3, "to": 4, "width": 1}]);
+                  nodes = new vis.DataSet([{"color": "green", "id": "Shoes", "label": "Shoes", "shape": "star", "size": 100}, {"color": "black", "id": "Nike", "label": "Nike", "shape": "dot"}]);
+                  edges = new vis.DataSet([{"from": "Shoes", "to": "Nike"}]);
 
                   nodeColors = {};
                   allNodes = nodes.get({ returnType: "Object" });
@@ -180,8 +139,6 @@
 
                   
 
-                  
-                    network.on("selectNode", neighbourhoodHighlight);
                   
 
                   
